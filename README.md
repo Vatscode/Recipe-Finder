@@ -1,84 +1,58 @@
-Recipe Finder App
-Description
-The Recipe Finder app is a user-friendly application built with React, Tailwind CSS, and DaisyUI that allows you to explore a wide variety of recipes. The app is personalized by default to fetch chicken recipes, but you can easily fetch recipes from different cuisines by simply changing the search query. It offers a sleek and responsive interface using modern web technologies.
+\# Recipe Finder App
 
-Features
-Personalized Default Search: The app starts by fetching chicken recipes, which provides a personalized experience for users interested in chicken dishes.
-Cuisine Search: You can search for any cuisine or ingredient, and the app will fetch relevant recipes from a variety of cuisines.
-Responsive UI: The app is fully responsive and works seamlessly on both desktop and mobile devices, thanks to Tailwind CSS and DaisyUI.
-Favorites: You can save your favorite recipes to local storage and revisit them later.
-Technologies Used
-React: A JavaScript library for building user interfaces.
-Tailwind CSS: A utility-first CSS framework to style the components.
-DaisyUI: A component library built on top of Tailwind CSS for pre-styled components.
-MealDB API: Provides the recipe data. You can easily modify the fetch function to fetch different cuisines by changing the search query.
-Installation
-Clone this repository:
+## Description
 
-bash
-Copy
-Edit
-git clone https://github.com/your-username/recipe-finder-app.git
-Navigate into the project directory:
+A React app built with Tailwind CSS and DaisyUI that allows users to find recipes. The app defaults to fetching chicken recipes, but you can search for any cuisine by modifying the search query.
 
-bash
-Copy
-Edit
-cd recipe-finder-app
-Install the dependencies:
+## Features
 
-bash
-Copy
-Edit
-npm install
-Set up the environment variables:
+- **Personalized Default Search** for chicken recipes.
+- **Cuisine Search**: Easily search for different cuisines.
+- **Responsive Design** with Tailwind CSS and DaisyUI.
+- **Favorites**: Save your favorite recipes locally.
 
-Create a .env file in the root directory.
-Add your MealDB API key (if needed for future use).
-Example .env file:
+## Technologies Used
 
-env
-Copy
-Edit
-VITE_API_KEY=your-api-key
-Start the development server:
+- **React**
+- **Tailwind CSS**
+- **DaisyUI**
+- **MealDB API** for fetching recipes.
 
-bash
-Copy
-Edit
-npm start
-Open the app in your browser at http://localhost:3000.
+## Installation
 
-How It Works
-Homepage: Displays a default set of chicken recipes. You can change the search query by typing into the search bar and hitting enter to fetch recipes from other cuisines.
+1. Clone the repo:
 
-Favorites Page: Users can add recipes to their favorites, and these will be saved in local storage for easy access later.
+    ```bash
+    git clone https://github.com/your-username/recipe-finder-app.git
+    ```
 
-Responsive Design: The app is responsive, ensuring a smooth experience across both desktop and mobile devices.
+2. Install dependencies:
 
-Fetching Recipes: Recipes are fetched from the MealDB API. You can customize the search query to fetch recipes from different cuisines by changing the fetch function.
+    ```bash
+    npm install
+    ```
 
-Example of modifying the fetch function for different cuisines:
+3. Start the development server:
 
-js
-Copy
-Edit
+    ```bash
+    npm start
+    ```
+
+4. Open the app in your browser: [http://localhost:3000](http://localhost:3000)
+
+## How It Works
+
+1. **Search Recipes:** By default, chicken recipes are shown. Modify the search query to fetch other cuisines.
+2. **Favorites:** Save recipes to local storage.
+3. **Responsive:** Works seamlessly on desktop and mobile.
+
+### Example: Changing Fetch Function for Different Cuisines
+
+To change the cuisine, simply modify the `fetchRecipes` function to use any cuisine you want. Here’s an example of how to change it:
+
+```javascript
 const fetchRecipes = async (searchQuery) => {
-  setLoading(true);
-  setRecipes([]);
-  try {
-    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`);
-    const data = await res.json();
-    setRecipes(data.meals);
-  } catch (error) {
-    console.log(error.message);
-  } finally {
-    setLoading(false);
-  }
+  const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`);
+  const data = await res.json();
+  setRecipes(data.meals);
 };
-Contributing
-Feel free to fork this repository and make any changes you need. If you have any improvements, bug fixes, or new features, open a pull request! Contributions are always welcome.
-
-License
-This project is licensed under the MIT License.
-
