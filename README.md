@@ -2,7 +2,8 @@
 
 ## Description
 
-A React app built with Tailwind CSS and DaisyUI that allows users to find recipes. The app defaults to fetching chicken recipes, but you can search for any cuisine by modifying the search query.
+A React app built with Tailwind CSS and DaisyUI that allows users to find recipes.No need to scroll youtube anymore, youre just one click away to finding best food recipies.
+The app defaults to fetching chicken recipes, but you can search for any cuisine by modifying the search query.
 
 ## Features
 
